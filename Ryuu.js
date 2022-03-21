@@ -2237,6 +2237,7 @@ break
 case 'tes':
 tes = fs.readFileSync('./assets/tes.mp3')
 reply('Bot Dah Nyala Bang...')
+Ryuu.sendMessage(from, tes, audio, { quoted: mek, mimetype: 'audio/mp4', ptt:true })
 break
 case 'rules':
 if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 

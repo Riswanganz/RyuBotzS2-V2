@@ -1090,16 +1090,6 @@ rows: [
 "description": `Menampilkan Seluruh Anime Menu`
 },
 {
-"title": "[🧸] Creator",
-"rowId": `${prefix}creator`, 
-"description": `Pembuat Bot ${botname}`
-},
-{
-"title": "[💻] Source Code",
-"rowId": `${prefix}sc`, 
-"description": `Menampilkan Script Bot ${botname}`
-},
-{
 "title": "[🏆] Big Thanks To",
 "rowId": `${prefix}tqto`, 
 "description": `Menampilkan Thanks To`
@@ -2239,6 +2229,15 @@ tes = fs.readFileSync('./assets/tes.mp3')
 reply('Bot Dah Nyala Bang...')
 Ryuu.sendMessage(from, tes, audio, { quoted: mek, mimetype: 'audio/mp4', ptt:true })
 break
+case 'ssweb':
+case 'ss':
+if (args.length < 1) return reply('Urlnya mana om')
+teks = q
+anu = await fetchJson(`https://shot.screenshotapi.net/screenshot?&url=${teks}`)
+buff = await getBuffer(anu.screenshot)
+Ryuu.sendMessage(from, buff, image, {quoted: mek, caption : teks})
+await limitAdd(sender, limit)
+break   
 case 'rules':
 if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
 if (isBanned) return reply('Kamu Sudah Di banned!')

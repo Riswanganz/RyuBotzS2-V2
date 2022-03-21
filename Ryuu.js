@@ -540,13 +540,13 @@ const isUser = cekUser(sender)
 const isRegistered = checkRegisteredUser(sender)
 const daftar1 = `Hai ${pushname}\nKamu Belum Terverifikasi Pencet Button Di Bawah Ini Untuk Verifikasi!!`
 const daftar2 = '```Klik Tombol Di Bawah Untuk Verify Kak```'
-const daftar3 = [{buttonId: `${prefix}verify`,buttonText: {displayText: `🌱 VERIFY 🌱`,},type: 1,},]
+const daftar3 = [{buttonId: `${prefix}verify`,buttonText: {displayText: `VERIFY`,},type: 1,},]
 const createSerial = (size) => {
 return crypto.randomBytes(size).toString('hex').slice(0, size)
 }
 const Prem1 = `Hai ${pushname}\nKamu Belum Premium, minta ke owner agar bisa menggunakan fitur inii!!`
 const Prem2 = '```Nomor Owner Di Bawah Ini Kak```'
-const Prem3 = [{buttonId: `${prefix}owner`,buttonText: {displayText: `🌱 OWNER 🌱`,},type: 1,},]
+const Prem3 = [{buttonId: `${prefix}owner`,buttonText: {displayText: `OWNER👨‍💻`,},type: 1,},]
 
 //Sticker Ngab
 const sendStickerFromUrl = async(to, url) => {
@@ -812,7 +812,7 @@ sendButMessage(from, ` *GROUP LINK DETECTED*\n\nMaaf Kamu Akan Di Kick Dari Grou
 {
 buttonId: `${prefix}antilink disable`,
 buttonText: {
-displayText: `Disable Antilink🌱`,
+displayText: `Disable Antilink`,
 },
 type: 1,
 }]);
@@ -900,7 +900,7 @@ var getLevel = getLevelingLevel(sender)
 addLevelingXp(sender, amountXp)
 if (requiredXp <= getLevelingXp(sender)) {
 addLevelingLevel(sender, 1)   
-var lvlup = monospace(`🌱 Level Up 🌱
+var lvlup = monospace(` Level Up 
 ✾ Nama : ${pushname}
 ✾ Rank : ${role}
 ✾ Status : ${elit}
@@ -955,7 +955,7 @@ tescok =
 🌱 _*Name User*_ : ${pushname}
 🏷 _*Bio User*_ : ${p.status==undefined?`Not Found`:p.status}
 📱 _*Nomor*_ : @${sender.split('@')[0]}`
- Sendbutdocument(from, tescok, "Create By Wanz", fs.readFileSync('./media/Ryuu.pdf'),{mimetype:Mimetype.pdf, thumbnail:fs.readFileSync('./media/Ryuu.jpg'), filename:`Ryuu.pdf`,pageCount: 999 }, [{buttonId:`${prefix}listmenu`,buttonText:{displayText:'LIST MENU 🌱'},type:1},{buttonId:`${prefix}allmenu`,buttonText:{displayText:'ALL MENU ⛩️'},type:1},{buttonId:`${prefix}myweb`,buttonText:{displayText:'MY WEB'},type:1}], {quoted:fvid, contextInfo: { mentionedJid: [ptod,dtod,stod], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`${tampilUcapan} ${pushname}\nScript Create By Wanz`,mediaType:"2",thumbnail:fakeimage,mediaUrl:`https://youtu.be/Q6utY1yaXAY`}}})
+ Sendbutdocument(from, tescok, "Create By Wanz", fs.readFileSync('./media/Ryuu.pdf'),{mimetype:Mimetype.pdf, thumbnail:fs.readFileSync('./media/Ryuu.jpg'), filename:`Ryuu.pdf`,pageCount: 999 }, [{buttonId:`${prefix}listmenu`,buttonText:{displayText:'LIST MENU'},type:1},{buttonId:`${prefix}allmenu`,buttonText:{displayText:'ALL MENU ⛩️'},type:1},{buttonId:`${prefix}loli`,buttonText:{displayText:'LOLI'},type:1}], {quoted:fvid, contextInfo: { mentionedJid: [ptod,dtod,stod], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`${tampilUcapan} ${pushname}\nScript Create By Wanz`,mediaType:"2",thumbnail:fakeimage,mediaUrl:`https://youtu.be/Q6utY1yaXAY`}}})
 break
 case 'listmenu':
 if (isBanned) return reply('Kamu Sudah Di banned!')
@@ -1139,9 +1139,7 @@ ${tampilUcapan}
 ✾ ${prefix}donasi
 ✾ ${prefix}rules
 ✾ ${prefix}speed
-✾ ${prefix}script
 ✾ ${prefix}verify
-✾ ${prefix}creator
 
 🌱 _*Group Menu*_ 🌱
 ✾ ${prefix}welcome *on/off*
@@ -1371,9 +1369,7 @@ menu =
 ✾ ${prefix}donasi
 ✾ ${prefix}rules
 ✾ ${prefix}speed
-✾ ${prefix}script
-✾ ${prefix}verify
-✾ ${prefix}creator`
+✾ ${prefix}verify`
 teks =
 `${botname} | Runtime : ${runtime(process.uptime())}\nOwner : ${ownername}`
 Ryuu.sendMessage(from, { contentText: `${menu}`, footerText: `${teks}`, buttons: [{ buttonId: `${prefix}donasi`, buttonText: { displayText: 'DONASI 💵' }, type: 1 },{ buttonId: `${prefix}owner`, buttonText: { displayText: 'OWNER 🌱' }, type: 1 } ], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: fakeimage, contextInfo: {mentionedJid: [sender]}}}, 'buttonsMessage')
@@ -2261,7 +2257,7 @@ break
 case 'donasi':
 if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
 if (isBanned) return reply('Kamu Sudah Di banned!')
-reply(`*TERIMA KASIH SUDAH ADA NIATAN MAU DONASI 🤗*\n\n*sedia untuk pulsa*\n*nomernya : 083804343232*contact owner :\nwa.me/${ownernumber} (Owner)`) 
+reply(`*TERIMA KASIH SUDAH ADA NIATAN MAU DONASI 🤗*\n\n*sedia untuk pulsa*\n*nomernya : 083804343232*\nsebaik nya chat owner dulu\nwa.me/${ownernumber} (Owner)`) 
 break
 case 'verify': case 'daftar':
  if (isUser) return reply('Kamu sudah terdaftar di dalam database')
@@ -2602,7 +2598,7 @@ buffer = await getBuffer(`https://api.xteam.xyz/attp?file&text=${c}`)
 Ryuu.sendMessage(from, buffer, sticker, { quoted: mek })
 break
 case 'emoji':case 'semoji':
-if (!q) return reply(`Example : ${prefix + command} 😂`)
+if (!q) return reply(`Example : ${prefix + command} ??`)
 hex2 = args.join(' ') 
 emoji.get(`${hex2}`).then(emoji => {
 teks = `${emoji.images[4].url}`

@@ -2236,36 +2236,20 @@ teks = q
 anu = await fetchJson(`https://shot.screenshotapi.net/screenshot?&url=${teks}`)
 buff = await getBuffer(anu.screenshot)
 Ryuu.sendMessage(from, buff, image, {quoted: mek, caption : teks})
-break   
-case 'antidelete':
-if (!mek.key.fromMe && !isOwner && !isCreator) return reply(lang.onlyOwner())
-if (args[0] === "on") {
-if (antidel === true) return reply(lang.anjawaUdhOn(command))
-antidel = true
-reply(lang.anjawaOn(command))
-} else if (args[0] === "off") {
-if (antidel === false) return
-antidel = false
-reply(lang.anjawaOff(command))
-} else if (!q) {
-          sendButMessage(from, `MODE ANTI DELETE`, `Choose one`, [
-            {
-              buttonId: 'antidelete on',
-              buttonText: {
-                displayText: `On`,
-              },
-              type: 1,
-            },
-            {
-              buttonId: 'antidelete off',
-              buttonText: {
-                displayText: `Off`,
-              },
-              type: 1,
-            },
-          ]);
-        }
-        break
+break
+case 'tagall':
+if (!isGroup) return reply(lang.onlygc())
+if (!isGroupAdmins) return reply(lang.onlygcAdmin())
+members_id = []
+teks = (args.length > 1) ? body.slice(8).trim() : ''
+teks += '\n\n'
+for (let mem of groupMembers) {
+teks += `@${mem.jid.split('@')[0]}\n`
+members_id.push(mem.jid)
+}
+mentions(teks, members_id, true)
+break
+// riswan
 case 'rules':
 if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
 if (isBanned) return reply('Kamu Sudah Di banned!')

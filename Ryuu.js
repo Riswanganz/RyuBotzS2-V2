@@ -2236,8 +2236,36 @@ teks = q
 anu = await fetchJson(`https://shot.screenshotapi.net/screenshot?&url=${teks}`)
 buff = await getBuffer(anu.screenshot)
 Ryuu.sendMessage(from, buff, image, {quoted: mek, caption : teks})
-await limitAdd(sender, limit)
 break   
+case 'antidelete':
+if (!mek.key.fromMe && !isOwner && !isCreator) return reply(lang.onlyOwner())
+if (args[0] === "on") {
+if (antidel === true) return reply(lang.anjawaUdhOn(command))
+antidel = true
+reply(lang.anjawaOn(command))
+} else if (args[0] === "off") {
+if (antidel === false) return
+antidel = false
+reply(lang.anjawaOff(command))
+} else if (!q) {
+          sendButMessage(from, `MODE ANTI DELETE`, `Choose one`, [
+            {
+              buttonId: 'antidelete on',
+              buttonText: {
+                displayText: `On`,
+              },
+              type: 1,
+            },
+            {
+              buttonId: 'antidelete off',
+              buttonText: {
+                displayText: `Off`,
+              },
+              type: 1,
+            },
+          ]);
+        }
+        break
 case 'rules':
 if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
 if (isBanned) return reply('Kamu Sudah Di banned!')

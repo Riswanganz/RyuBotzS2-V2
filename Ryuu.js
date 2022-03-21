@@ -399,6 +399,17 @@ Ryuu.sendMessage(to, media, type, { quoted: ftrol, mimetype: mime, caption: text
 fs.unlinkSync(filename)
 });
 }
+//Auto Bio Ketika Online
+//note : hapus jika tidak ingin bio anda ke ubah otomatis
+if (autobio){
+if (autobio === false) return
+let settingstatus = 0;
+if (new Date() * 1 - settingstatus > 1000) {
+let _uptime = process.uptime() * 1000;
+let uptimer = clockString(_uptime);
+await Ryuu.setStatus(`${botname} | ⏲️ Runtime : ${uptimer}`).catch((_) => _);
+settingstatus = new Date() * 1;
+}}
 //function check healt by febri
 const checkHealt = (sender) => {
 let found = false
@@ -955,7 +966,7 @@ tescok =
 🌱 _*Name User*_ : ${pushname}
 🏷 _*Bio User*_ : ${p.status==undefined?`Not Found`:p.status}
 📱 _*Nomor*_ : @${sender.split('@')[0]}`
- Sendbutdocument(from, tescok, "Create By Wanz", fs.readFileSync('./media/Ryuu.pdf'),{mimetype:Mimetype.pdf, thumbnail:fs.readFileSync('./media/Ryuu.jpg'), filename:`Ryuu.pdf`,pageCount: 999 }, [{buttonId:`${prefix}listmenu`,buttonText:{displayText:'LIST MENU'},type:1},{buttonId:`${prefix}allmenu`,buttonText:{displayText:'ALL MENU ⛩️'},type:1},{buttonId:`${prefix}loli`,buttonText:{displayText:'LOLI'},type:1}], {quoted:fvid, contextInfo: { mentionedJid: [ptod,dtod,stod], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`${tampilUcapan} ${pushname}\nScript Create By Wanz`,mediaType:"2",thumbnail:fakeimage,mediaUrl:`https://youtu.be/Q6utY1yaXAY`}}})
+ Sendbutdocument(from, tescok, "Create By Wanz", fs.readFileSync('./media/Ryuu.pdf'),{mimetype:Mimetype.pdf, thumbnail:fs.readFileSync('./media/Ryuu.jpg'), filename:`Ryuu.pdf`,pageCount: 999 }, [{buttonId:`${prefix}listmenu`,buttonText:{displayText:'LIST MENU'},type:1},{buttonId:`${prefix}allmenu`,buttonText:{displayText:'ALL MENU ⛩️'},type:1}], {quoted:fvid, contextInfo: { mentionedJid: [ptod,dtod,stod], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`${tampilUcapan} ${pushname}\nScript Create By Wanz`,mediaType:"2",thumbnail:fakeimage,mediaUrl:`https://youtu.be/Q6utY1yaXAY`}}})
 break
 case 'listmenu':
 if (isBanned) return reply('Kamu Sudah Di banned!')
@@ -1242,7 +1253,6 @@ ${tampilUcapan}
 ✾ ${prefix}sound2
 ✾ ${prefix}sound3
 ✾ ${prefix}sound4
-✾ ${prefix}sound5
 
 ☕ _*Maker Menu*_ ☕
 ✾ ${prefix}rip
@@ -2224,9 +2234,9 @@ timestampe = speed();
 latensie = speed() - timestampe
 reply(`_*Speed Test*_\nMerespon dalam ${latensie.toFixed(4)} Sec 💬`)
 break
-case 'myweb':
-menu =
-`test`
+case 'tes':
+tes = fs.readFileSync('./assets/tes.mp3')
+reply('Bot Dah Nyala Bang...')
 break
 case 'rules':
 if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
@@ -2419,13 +2429,6 @@ if (isBanned) return reply('Kamu Sudah Di banned!')
 if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
 reply(mess.wait) 
 man = fs.readFileSync('./assets/sound4.mp3');
-Ryuu.sendMessage(from, man, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-break
-case 'sound5':
-if (isBanned) return reply('Kamu Sudah Di banned!')
-if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
-reply(mess.wait) 
-man = fs.readFileSync('./assets/sound5.mp3');
 Ryuu.sendMessage(from, man, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
 break
 

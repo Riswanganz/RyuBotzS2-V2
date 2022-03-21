@@ -687,7 +687,7 @@ participant: `0@s.whatsapp.net`, ...(from ?
 },
 message: { 
 "videoMessage": { 
-"title": `Ryuuka Botz🐧`,
+"title": `Wanz🐧`,
 "h": `${tampilUcapan} ${pushname}`,
 'duration': '99999', 
 'caption': `${tampilUcapan} ${pushname}`,
@@ -945,7 +945,7 @@ tescok =
 `Haii @${sender.split('@')[0]}
 
 *Info Bot* 💻
-👤 _*Owner Name*_ : ${ownername}
+?? _*Owner Name*_ : ${ownername}
 🤖 _*Bot Name*_ : ${botname}
 💻 _*Speed*_ : ${processsTime(mek.messageTimestamp.low, moment())}s
 📱 _*Runtime*_ : ${runtime(process.uptime())}
@@ -2588,12 +2588,12 @@ reply('kirim/reply gambar/video')
 }
 break
 case 'ttp':
-if (!c) return reply(`Teks Nya Mana Kak?\nContoh :\n${prefix}ttp Ryuuka Botz`)
+if (!c) return reply(`Teks Nya Mana Kak?\nContoh :\n${prefix}ttp Wanz`)
 anu1 = await getBuffer(`https://api.xteam.xyz/ttp?file&text=${c}`)
 Ryuu.sendMessage(from, anu1, image, {quoted: mek }) //Senggaja Gw Pake Image Karna Kalo Sticker Gada Tulisannya
 break
 case 'attp':
-if (!c) return reply(`Teks Nya Mana Kak?\nContoh :\n${prefix}attp Ryuuka Botz`)
+if (!c) return reply(`Teks Nya Mana Kak?\nContoh :\n${prefix}attp Wanz`)
 buffer = await getBuffer(`https://api.xteam.xyz/attp?file&text=${c}`)
 Ryuu.sendMessage(from, buffer, sticker, { quoted: mek })
 break
@@ -2833,7 +2833,7 @@ case 'magma': case 'glossy': case 'bread': case 'ice': case 'honey':
 if (isLimit(sender, isPrem, isOwner, limitCount, limit)) return reply(mess.limit) 
 if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
 if (isBanned) return reply('Kamu Sudah Di banned!')
-if (args.length == 0) return reply(`Example: ${prefix}${command} Ryuuka Botz`)
+if (args.length == 0) return reply(`Example: ${prefix}${command} Wanz`)
 reply(mess.wait) 
 anu = args.join(" ")
 ini_buffer = await getBuffer(`https://ryuu-apii.herokuapp.com/api/textpro/${command}?text=${anu}&apikey=${ryukey}`)
@@ -3374,7 +3374,7 @@ url = args.join(' ')
 reply(`Tunggu Butuh Beberapa Menit!`) 
 ini = await fetchJson(`https://ryuu-apii.herokuapp.com/api/download/tiktok?url=${url}&apikey=${ryukey}`)
 buffer = await getBuffer(ini.result.nowatermark)
-Ryuu.sendMessage(from, buffer, video, {quoted: ftrol, caption: 'Succes By : © Ryuuka Botz'})
+Ryuu.sendMessage(from, buffer, video, {quoted: ftrol, caption: 'Succes By : © Wanz'})
 break
 case 'tiktokwm':
 if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
@@ -3384,7 +3384,7 @@ url = args.join(' ')
 reply(`Tunggu Butuh Beberapa Menit!`) 
 ini = await fetchJson(`https://ryuu-apii.herokuapp.com/api/download/tiktok?url=${url}&apikey=${ryukey}`)
 buffer = await getBuffer(ini.result.watermark)
-Ryuu.sendMessage(from, buffer, video, {quoted: ftrol, caption: 'Succes By : © Ryuuka Botz'})
+Ryuu.sendMessage(from, buffer, video, {quoted: ftrol, caption: 'Succes By : © Wanz'})
 break
 case 'mediafire':
 if (isBanned) return reply('Kamu Sudah Di banned!')

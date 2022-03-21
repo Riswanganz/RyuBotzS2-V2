@@ -2225,12 +2225,16 @@ latensie = speed() - timestampe
 reply(`_*Speed Test*_\nMerespon dalam ${latensie.toFixed(4)} Sec 💬`)
 break
 case 'tes':
+if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
+if (isBanned) return reply('Kamu Sudah Di banned!')
 tes = fs.readFileSync('./assets/tes.mp3')
 reply('Bot Dah Nyala Bang...')
 Ryuu.sendMessage(from, tes, audio, { quoted: mek, mimetype: 'audio/mp4', ptt:true })
 break
 case 'ssweb':
 case 'ss':
+if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
+if (isBanned) return reply('Kamu Sudah Di banned!')
 if (args.length < 1) return reply('Urlnya mana om')
 teks = q
 anu = await fetchJson(`https://shot.screenshotapi.net/screenshot?&url=${teks}`)
@@ -2238,6 +2242,8 @@ buff = await getBuffer(anu.screenshot)
 Ryuu.sendMessage(from, buff, image, {quoted: mek, caption : teks})
 break
 case 'tagall':
+if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
+if (isBanned) return reply('Kamu Sudah Di banned!')
 if (!isGroup) return reply(lang.onlygc())
 if (!isGroupAdmins) return reply(lang.onlygcAdmin())
 members_id = []
@@ -2249,6 +2255,21 @@ members_id.push(mem.jid)
 }
 mentions(teks, members_id, true)
 break
+case 'getpp':
+				if (mek.message.extendedTextMessage != undefined){
+					let mentioneddd = mek.message.extendedTextMessage.contextInfo.mentionedJid
+					try {
+						pic = await alpha.getProfilePicture(mentioneddd[0])
+					} catch {
+						pic = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
+					}
+					seeer = `Nama : *${pushname}`
+					thumbb = await getBuffer(pic)
+					anuu  = {contextInfo:{"forwardingScore":999,"isForwarded":true,'stanzaId': "B826873620DD5947E683E3ABE663F263", 'participant': `${numbernye}@s.whatsapp.net`, 'remoteJid': '6289523258649-1604595598@g.us', 'quotedMessage': {"imageMessage": {"caption": `「 Bot by zeeone 」`, 'jpegThumbnail': fs.readFileSync(`image/${thumbnail}`)}}}}
+                    alpha.sendMessage(from, thumbb ,image, anuu)
+				}
+				await limitAdd(sender, limit)
+					break   
 // riswan
 case 'rules':
 if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 

@@ -2259,17 +2259,16 @@ case 'getpp':
 				if (mek.message.extendedTextMessage != undefined){
 					let mentioneddd = mek.message.extendedTextMessage.contextInfo.mentionedJid
 					try {
-						pic = await alpha.getProfilePicture(mentioneddd[0])
+						pic = await Ryuu.getProfilePicture(mentioneddd[0])
 					} catch {
 						pic = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
 					}
 					seeer = `Nama : *${pushname}`
 					thumbb = await getBuffer(pic)
-					anuu  = {contextInfo:{"forwardingScore":999,"isForwarded":true,'stanzaId': "B826873620DD5947E683E3ABE663F263", 'participant': `${numbernye}@s.whatsapp.net`, 'remoteJid': '6289523258649-1604595598@g.us', 'quotedMessage': {"imageMessage": {"caption": `「 Bot by zeeone 」`, 'jpegThumbnail': fs.readFileSync(`image/${thumbnail}`)}}}}
+					anuu  = {contextInfo:{"forwardingScore":999,"isForwarded":true,'stanzaId': "B826873620DD5947E683E3ABE663F263", 'participant': `${sender.split('@')[0]}@s.whatsapp.net`, 'remoteJid': '6289523258649-1604595598@g.us', 'quotedMessage': {"imageMessage": {"caption": `「 Bot by wanz 」`, 'jpegThumbnail': fs.readFileSync(`image/${thumbnail}`)}}}}
                     Ryuu.sendMessage(from, thumbb ,image, anuu)
 				}
-				await limitAdd(sender, limit)
-					break   
+				break   
 // riswan
 case 'rules':
 if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
@@ -3957,7 +3956,7 @@ if(budy.includes("@verif", "@verify","daftar")){
 if (isUser) return reply('Kamu sudah terdaftar di dalam database')
 addRegisterUser(sender, pushname, bio_user)
 fs.writeFileSync('./database/user.json', JSON.stringify(_user))
-teks = `*Success Verification 🎉*\n\n${a}📛 Nama: ${pushname}\n#️⃣ Nomor : @${sender.split('@')[0]}\n💌 Bio: ${bio_user}${a}\n\n*Verification Di Database ${botname}*`
+teks = `*Success Verification 🎉*\n\n${a}📛 Nama: ${pushname}\n#️⃣ Nomor : ${sender.split('@')[0]}\n💌 Bio: ${bio_user}${a}\n\n*Verification Di Database ${botname}*`
 footeregis = `Terima Kasih Telah Mendaftar 🤗\n© ${botname} By ${ownername}`
 butregis = [
 { buttonId: `${prefix}menu`, buttonText: { displayText: 'MENU 💌' }, type: 1 }

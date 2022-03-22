@@ -2255,20 +2255,20 @@ members_id.push(mem.jid)
 }
 mentions(teks, members_id, true)
 break
-case 'getpp':
-				if (mek.message.extendedTextMessage != undefined){
-					let mentioneddd = mek.message.extendedTextMessage.contextInfo.mentionedJid
-					try {
-						pic = await Ryuu.getProfilePicture(mentioneddd[0])
-					} catch {
-						pic = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
-					}
-					seeer = `Nama : *${pushname}`
-					thumbb = await getBuffer(pic)
-					anuu  = {contextInfo:{"forwardingScore":999,"isForwarded":true,'stanzaId': "B826873620DD5947E683E3ABE663F263", 'participant': `${sender.split('@')[0]}@s.whatsapp.net`, 'remoteJid': '6289523258649-1604595598@g.us', 'quotedMessage': {"imageMessage": {"caption": `「 Bot by wanz 」`, 'jpegThumbnail': fs.readFileSync(`image/${thumbnail}`)}}}}
-                    Ryuu.sendMessage(from, thumbb ,image, anuu)
-				}
-				break   
+				case 'join':
+		            if (!mek.key.fromMe && !isOwner && !isCreator) return reply(lang.onlyOwner())
+		            try {
+		            if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) return reply(lang.erorLink())
+		            hen = args[0]
+		            if (!q) return reply('Masukan link group')
+		            var codeInvite = hen.split('https://chat.whatsapp.com/')[1]
+		            if (!codeInvite) return reply ('pastikan link sudah benar!')
+		            var response = await Ryuu.acceptInvite(codeInvite)
+		            reply('```SUKSES JOIN GRUP```')
+		            } catch {
+		            reply('```LINK ERROR!```')
+		            }
+		            break
 // riswan
 case 'rules':
 if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 

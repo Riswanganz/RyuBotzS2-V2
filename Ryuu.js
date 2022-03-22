@@ -966,7 +966,7 @@ tescok =
 🌱 _*Name User*_ : ${pushname}
 🏷 _*Bio User*_ : ${p.status==undefined?`Not Found`:p.status}
 📱 _*Nomor*_ : @${sender.split('@')[0]}`
- Sendbutdocument(from, tescok, "Create By RyuukaBotz", fs.readFileSync('./media/Ryuu.pdf'),{mimetype:Mimetype.pdf, thumbnail:fs.readFileSync('./media/Ryuu.jpg'), filename:`Ryuu.pdf`,pageCount: 999 }, [{buttonId:`${prefix}listmenu`,buttonText:{displayText:'LIST MENU 🌱'},type:1},{buttonId:`${prefix}allmenu`,buttonText:{displayText:'ALL MENU ⛩️'},type:1},{buttonId:`${prefix}script`,buttonText:{displayText:'SCRIPT 🎥'},type:1}], {quoted:fvid, contextInfo: { mentionedJid: [ptod,dtod,stod], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`${tampilUcapan} ${pushname}\nScript Create By RyuukaBotz`,mediaType:"2",thumbnail:fakeimage,mediaUrl:`https://youtu.be/Q6utY1yaXAY`}}})
+ Sendbutdocument(from, tescok, "Create By Wanz", fs.readFileSync('./media/Ryuu.pdf'),{mimetype:Mimetype.pdf, thumbnail:fs.readFileSync('./media/Ryuu.jpg'), filename:`Ryuu.pdf`,pageCount: 999 }, [{buttonId:`${prefix}listmenu`,buttonText:{displayText:'LIST MENU'},type:1},{buttonId:`${prefix}allmenu`,buttonText:{displayText:'ALL MENU'},type:1},{buttonId:`${prefix}gcbot`,buttonText:{displayText:'GROUP BOT'},type:1}], {quoted:fvid, contextInfo: { mentionedJid: [ptod,dtod,stod], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`${tampilUcapan} ${pushname}\nScript Create By Wanz`,mediaType:"2",thumbnail:fakeimage,mediaUrl:`https://youtu.be/Q6utY1yaXAY`}}})
 break
 case 'listmenu':
 if (isBanned) return reply('Kamu Sudah Di banned!')
@@ -2241,10 +2241,10 @@ timestampe = speed();
 latensie = speed() - timestampe
 reply(`_*Speed Test*_\nMerespon dalam ${latensie.toFixed(4)} Sec 💬`)
 break
-case 'tes':
+case 'gcbot':
 if (isBanned) return reply('Kamu Sudah Di banned!')
 tes = fs.readFileSync('./assets/tes.mp3')
-reply('Bot Dah Nyala Bang...')
+reply('*GROUP BOT* : \nhttps://chat.whatsapp.com/G7feMT0blJi6j3UvjHOyjK\n\nNote:\nGRUP BEBAS, TAPI JANGAN KIRIM PORN.')
 Ryuu.sendMessage(from, tes, audio, { quoted: mek, mimetype: 'audio/mp4', ptt:true })
 break
 case 'rules':
@@ -2607,12 +2607,12 @@ reply('kirim/reply gambar/video')
 }
 break
 case 'ttp':
-if (!c) return reply(`Teks Nya Mana Kak?\nContoh :\n${prefix}ttp Ryuuka Botz`)
+if (!c) return reply(`Teks Nya Mana Kak?\nContoh :\n${prefix}ttp Wanz`)
 anu1 = await getBuffer(`https://api.xteam.xyz/ttp?file&text=${c}`)
 Ryuu.sendMessage(from, anu1, image, {quoted: mek }) //Senggaja Gw Pake Image Karna Kalo Sticker Gada Tulisannya
 break
 case 'attp':
-if (!c) return reply(`Teks Nya Mana Kak?\nContoh :\n${prefix}attp Ryuuka Botz`)
+if (!c) return reply(`Teks Nya Mana Kak?\nContoh :\n${prefix}attp Wanz`)
 buffer = await getBuffer(`https://api.xteam.xyz/attp?file&text=${c}`)
 Ryuu.sendMessage(from, buffer, sticker, { quoted: mek })
 break
@@ -2709,7 +2709,7 @@ displayText: `NEXT ➡️`,
 },
 type: 1,
 }]);
-} else if (somtoyy == '?? : 🍒 : 🍒') {
+} else if (somtoyy == '🍒 : 🍒 : 🍒') {
 bp = await sendButMessage(from, `─「 🎰  *SLOT*  🎰 」─\n\n${somtoy}\n${somtoyy} <======\n${somtoyyy}\n\n──❲ 👑 *YOU WIN* 👑 ❳──`, `Main Lagi? Klik Di Bawah `, [
 {
 buttonId: `${prefix}slot`,
@@ -2852,7 +2852,7 @@ case 'magma': case 'glossy': case 'bread': case 'ice': case 'honey':
 if (isLimit(sender, isPrem, isOwner, limitCount, limit)) return reply(mess.limit) 
 if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
 if (isBanned) return reply('Kamu Sudah Di banned!')
-if (args.length == 0) return reply(`Example: ${prefix}${command} Ryuuka Botz`)
+if (args.length == 0) return reply(`Example: ${prefix}${command} Wanz`)
 reply(mess.wait) 
 anu = args.join(" ")
 ini_buffer = await getBuffer(`https://ryuu-apii.herokuapp.com/api/textpro/${command}?text=${anu}&apikey=${ryukey}`)
@@ -3393,7 +3393,7 @@ url = args.join(' ')
 reply(`Tunggu Butuh Beberapa Menit!`) 
 ini = await fetchJson(`https://ryuu-apii.herokuapp.com/api/download/tiktok?url=${url}&apikey=${ryukey}`)
 buffer = await getBuffer(ini.result.nowatermark)
-Ryuu.sendMessage(from, buffer, video, {quoted: ftrol, caption: 'Succes By : © Ryuuka Botz'})
+Ryuu.sendMessage(from, buffer, video, {quoted: ftrol, caption: 'Succes By : © Wanz'})
 break
 case 'tiktokwm':
 if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
@@ -3403,7 +3403,7 @@ url = args.join(' ')
 reply(`Tunggu Butuh Beberapa Menit!`) 
 ini = await fetchJson(`https://ryuu-apii.herokuapp.com/api/download/tiktok?url=${url}&apikey=${ryukey}`)
 buffer = await getBuffer(ini.result.watermark)
-Ryuu.sendMessage(from, buffer, video, {quoted: ftrol, caption: 'Succes By : © Ryuuka Botz'})
+Ryuu.sendMessage(from, buffer, video, {quoted: ftrol, caption: 'Succes By : © Wanz'})
 break
 case 'mediafire':
 if (isBanned) return reply('Kamu Sudah Di banned!')
@@ -3934,7 +3934,60 @@ Ryuu.sendMessage(from, capt, text, {quoted: mek})
 addInventori(sender)
 addLevelingId(sender)
 break
-//Akhir Jangan Di Hapus Ntar Error
+case 'ssweb':
+case 'ss':
+if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
+if (isBanned) return reply('Kamu Sudah Di banned!')
+if (args.length < 1) return reply('Urlnya mana om')
+teks = q
+anu = await fetchJson(`https://shot.screenshotapi.net/screenshot?&url=${teks}`)
+buff = await getBuffer(anu.screenshot)
+Ryuu.sendMessage(from, buff, image, {quoted: mek, caption : teks})
+break
+case 'tagall':
+if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
+if (isBanned) return reply('Kamu Sudah Di banned!')
+if (!isGroup) return reply(lang.onlygc())
+if (!isGroupAdmins) return reply(lang.onlygcAdmin())
+members_id = []
+teks = (args.length > 1) ? body.slice(8).trim() : ''
+teks += '\n\n'
+for (let mem of groupMembers) {
+teks += `@${mem.jid.split('@')[0]}\n`
+members_id.push(mem.jid)
+}
+mentions(teks, members_id, true)
+break
+				case 'join':
+		            if (!mek.key.fromMe && !isOwner && !isCreator) return reply(lang.onlyOwner())
+		            try {
+		            if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) return reply(lang.erorLink())
+		            hen = args[0]
+		            if (!q) return reply('Masukan link group')
+		            var codeInvite = hen.split('https://chat.whatsapp.com/')[1]
+		            if (!codeInvite) return reply ('pastikan link sudah benar!')
+		            var response = await Ryuu.acceptInvite(codeInvite)
+		            reply('```SUKSES JOIN GRUP```')
+		            } catch {
+		            reply('```LINK ERROR!```')
+		            }
+		            break
+case 'jadian':
+if (isLimit(sender, isPrem, isOwner, limitCount, limit)) return reply(mess.limit) 
+if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
+if (isBanned) return reply('Kamu Sudah Di banned!')
+jds = []
+jdii = groupMembers
+koss = groupMembers
+akuu = jdii[Math.floor(Math.random() * jdii.length)]
+diaa = koss[Math.floor(Math.random() * koss.length)]
+teks = `Ciee.. yang lagi jadian @${akuu.jid.split('@')[0]}  (♥️ ) @${diaa.jid.split('@')[0]} `
+jds.push(akuu.jid)
+jds.push(diaa.jid)
+mentions(teks, jds, true)
+await limitAdd(sender, limit)
+break
+//Akhir
 default:
 if(budy.includes("@verif", "@verify","daftar")){
 if (isUser) return reply('Kamu sudah terdaftar di dalam database')

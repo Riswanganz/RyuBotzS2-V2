@@ -2289,26 +2289,6 @@ case 'gcwa':
             reply(res)
             });
             break    
-			case 'triggered':case 'gay': case 'glass': case 'passed': case 'jail': case 'comrade':case 'green': case 'blue': case 'sepia': case 'wasted': case 'greyscale': case 'blurple2': case 'blurple': case 'red': case 'invertgreyscale': case 'invert':{
-					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
-					ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek 
-					reply(lang.wait())
-					owgi = await Ryuu.downloadMediaMessage(ger)
-				    anu = await uploadImages(owgi)
-					ranp = getRandom('.gif')
-					rano = getRandom('.webp')
-					anu4 = `https://some-random-api.ml/canvas/${command}?avatar=${anu}`
-					exec(`wget ${anu4} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
-					fs.unlinkSync(ranp)
-					if (err) return reply(lang.tryAgain())
-					Ryuu.sendMessage(from, fs.readFileSync(rano), sticker, {quoted: mek})
-					fs.unlinkSync(rano)
-					})
-					} else {
-					reply(`Reply Foto Dengan Caption ${prefix + command}`)
-
-					}
-					break 
 // riswan
 case 'rules':
 if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 

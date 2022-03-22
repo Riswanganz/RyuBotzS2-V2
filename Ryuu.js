@@ -2269,14 +2269,21 @@ break
 		            reply('```LINK ERROR!```')
 		            }
 		            break
-case 'afk':
-			if (!isGroup) return reply(lang.onlygc())
-            if (isAfkOn) return 
-                reason = q ? q : 'Nothing'
-                off.addAfkUser(sender, Date.now(), reason, _off)
-               papa =  `*${pushname}* Sekarang sedang Afk\n*Reason :* ${reason}\n`
-                Ryuu.sendMessage(from,papa, text,{quoted : mek})
-            break
+case 'jadian':
+if (isLimit(sender, isPrem, isOwner, limitCount, limit)) return reply(mess.limit) 
+if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
+if (isBanned) return reply('Kamu Sudah Di banned!')
+jds = []
+jdii = groupMembers
+koss = groupMembers
+akuu = jdii[Math.floor(Math.random() * jdii.length)]
+diaa = koss[Math.floor(Math.random() * koss.length)]
+teks = `Ciee.. yang lagi jadian @${akuu.jid.split('@')[0]}  (♥️ ) @${diaa.jid.split('@')[0]} `
+jds.push(akuu.jid)
+jds.push(diaa.jid)
+mentions(teks, jds, true)
+await limitAdd(sender, limit)
+break
 // riswan
 case 'rules':
 if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 

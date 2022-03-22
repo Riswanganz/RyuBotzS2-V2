@@ -401,15 +401,6 @@ fs.unlinkSync(filename)
 }
 //Auto Bio Ketika Online
 //note : hapus jika tidak ingin bio anda ke ubah otomatis
-if (autobio){
-if (autobio === false) return
-let settingstatus = 0;
-if (new Date() * 1 - settingstatus > 1000) {
-let _uptime = process.uptime() * 1000;
-let uptimer = clockString(_uptime);
-await Ryuu.setStatus(`${botname} | ⏲️ Runtime : ${uptimer}`).catch((_) => _);
-settingstatus = new Date() * 1;
-}}
 //function check healt by febri
 const checkHealt = (sender) => {
 let found = false

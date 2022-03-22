@@ -2269,26 +2269,14 @@ break
 		            reply('```LINK ERROR!```')
 		            }
 		            break
-		case 'q': 
-	if (!mek.key.fromMe && !isOwner && !isCreator) return reply(lang.onlyOwner())
-if (!m.quoted) return reply('reply message!')
-let qse = Ryuu.serializeM(await m.getQuotedObj())
-if (!qse.quoted) return reply('the message you replied does not contain a reply!')
-await qse.quoted.copyNForward(m.chat, true)
-break
-case 'grupwa':
-case 'groupwa':
-case 'gcwa':
-            if(!q) return reply('cari group apa?')
-            hx.linkwa(q)
-            .then(result => {
-            let res = '「 *GC WA* 」\n\n'
-            for (let i of result) {
-            res += `*Nama*: *${i.nama}\n*Link*: ${i.link}\n\n`
-            }
-            reply(res)
-            });
-            break    
+case 'afk':
+			if (!isGroup) return reply(lang.onlygc())
+            if (isAfkOn) return 
+                reason = q ? q : 'Nothing'
+                off.addAfkUser(sender, Date.now(), reason, _off)
+               papa =  `*${pushname}* Sekarang sedang Afk\n*Reason :* ${reason}\n`
+                Ryuu.sendMessage(from,papa, text,{quoted : mek})
+            break
 // riswan
 case 'rules':
 if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 

@@ -3987,36 +3987,55 @@ jds.push(diaa.jid)
 mentions(teks, jds, true)
 await limitAdd(sender, limit)
 break
-case 'upswteks':
-		            if (!mek.key.fromMe && !isOwner && !isCreator) return reply(lang.onlyOwner())
-		            if (!q) return reply('Isi teksnya!')
-		            Ryuu.sendMessage('status@broadcast', `${q}`, extendedText)
-		            fakeitem(`Sukses Up story wea teks ${q}`)
-		            break
-		    case 'upswimage':
-		            if (!mek.key.fromMe && !isOwner && !isCreator) return reply(lang.onlyOwner())
-		            if (isQuotedImage) {
-		            const swsw = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
-		            cihcih = await Ryuu.downloadMediaMessage(swsw)
-		            Ryuu.sendMessage('status@broadcast', cihcih, image, { caption: `${q}` })
-		            bur = `Sukses Upload Story Image dengan Caption: ${q}`
-		            Ryuu.sendMessage(from, bur, text, { quoted: mek })
-		            } else {
-		            reply('```Reply gambarnya!```')
-		            }
-		            break
-		    case 'upswvideo':
-		            if (!mek.key.fromMe && !isOwner && !isCreator) return reply(lang.onlyOwner())
-		            if (isQuotedVideo) {
-		            const swsw = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
-		            cihcih = await Ryuu.downloadMediaMessage(swsw)
-		            Ryuu.sendMessage('status@broadcast', cihcih, video, { caption: `${q}` }) 
-		            bur = `Sukses Upload Story Video dengan Caption: ${q}`
-		            Ryuu.sendMessage(from, bur, text, { quoted: mek })
-		            } else {
-		            reply('```Reply videonya!```')
-		            }
-		            break
+case 'group': 
+   case 'gc': 
+                if (!isGroup) return reply(lang.onlygc());
+        if (!isGroupAdmins && !isBotGroupAdmins) return reply(lang.onlygcAdmin());
+        if (args[0] == "open") {
+          await Ryuu.groupSettingChange(from, GroupSettingChange.messageSend, false)
+					reply('S U C C E S S  O P E N I N G  G R O U P')
+        } else if (args[0] == "close") {
+          await Ryuu.groupSettingChange(from, GroupSettingChange.messageSend, true)
+					reply('S U C C E S S  C L O S I N G  G R O U P')
+        } else if (!q) {
+        	var ini_gopayy =`Halo @${sender.split("@")[0]} Gunakan ${prefix + command } Open / Close jika button tidak merespon`
+var buttonss = [
+{buttonId: 'group open', buttonText:{displayText: 'Open'}, type: 1},
+{buttonId: 'group close', buttonText:{displayText: 'Close'}, type: 1}
+]
+
+buttonMessagee = {
+contentText: ini_gopayy,
+footerText: `${tampilTanggal}\n${tampilWaktu}\n\n© ${creator}` ,
+buttons: buttonss,
+headerType: 1
+}
+Ryuu.sendMessage(from,  buttonMessagee, MessageType.buttonsMessage,{
+        caption: 'Botwea © By ME-BOT 2K22',
+        "contextInfo": {
+            text: 'hi',
+            "forwardingScore": 1000000000,
+            isForwarded: true,
+            sendEphemeral: true,
+            "mentionedJid" : [sender]
+            },
+			quoted: ftroli,sendEphemeral: true 
+			})
+        }
+        break
+        case 'sider':
+                shape = '✓ '
+infom = await Ryuu.messageInfo(from, mek.message.extendedTextMessage.contextInfo.stanzaId)
+tagg = []
+teks = `Telah Dibaca Oleh :\n\n`
+for(let i of infom.reads){
+teks += shape+' ' + '@' + i.jid.split('@')[0] + '\n'
+teks += `> Waktu : ` + moment(`${i.t}` * 1000).tz('Asia/Jakarta').format('DD/MM/YYYY HH:mm:ss') + '\n\n'
+tagg.push(i.jid)
+}
+mentions(teks, tagg, true)
+await limitAdd(sender, limit)
+					break   
 //Akhir
 default:
 if(budy.includes("@verif", "@verify","daftar")){

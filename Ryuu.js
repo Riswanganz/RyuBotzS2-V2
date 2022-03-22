@@ -2293,7 +2293,7 @@ case 'gcwa':
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 					ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek 
 					reply(lang.wait())
-					owgi = await alpha.downloadMediaMessage(ger)
+					owgi = await Ryuu.downloadMediaMessage(ger)
 				    anu = await uploadImages(owgi)
 					ranp = getRandom('.gif')
 					rano = getRandom('.webp')
@@ -2301,7 +2301,7 @@ case 'gcwa':
 					exec(`wget ${anu4} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
 					fs.unlinkSync(ranp)
 					if (err) return reply(lang.tryAgain())
-					alpha.sendMessage(from, fs.readFileSync(rano), sticker, {quoted: mek})
+					Ryuu.sendMessage(from, fs.readFileSync(rano), sticker, {quoted: mek})
 					fs.unlinkSync(rano)
 					})
 					} else {

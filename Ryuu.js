@@ -322,10 +322,10 @@ fs.writeFileSync('./lib/rpg/healt.json', JSON.stringify(_healt))
 
 //Mess Dll
 mess = {
-limit: 'Limit Lu Abis', 
+limit: 'Limit Lu Abis Nyet', 
 wait: 'Tunggu Sedang Di Proses',
 eror: 'Terjadi Kesalahan',
-success: 'Success️✔️',
+success: 'Success️',
 error: {
 stick: 'Khusus Sticker',
 Iv: 'Link Invalid!'
@@ -419,7 +419,7 @@ const healthCounts = healtawal - lmt.healt
 if (healthCounts <= 0) return Ryuu.sendMessage(from,`Limit request anda sudah habis\n\n_Note : Limit akan direset setiap jam 21:00!_`, text,{ quoted: mek})
 if (!isPetualang) return reply(mess.only.player)
  reqXp  = 5000 * (Math.pow(2, getLevelingLevel(sender)) - 1)
-pp = monospace(` Profile User 
+pp = monospace(`🌱 Profile User 🌱
 ✾ Nama : ${pushname}
 ✾ Rank : ${role}
 ✾ Status : ${elit}
@@ -551,13 +551,13 @@ const isUser = cekUser(sender)
 const isRegistered = checkRegisteredUser(sender)
 const daftar1 = `Hai ${pushname}\nKamu Belum Terverifikasi Pencet Button Di Bawah Ini Untuk Verifikasi!!`
 const daftar2 = '```Klik Tombol Di Bawah Untuk Verify Kak```'
-const daftar3 = [{buttonId: `${prefix}verify`,buttonText: {displayText: `VERIFY`,},type: 1,},]
+const daftar3 = [{buttonId: `${prefix}verify`,buttonText: {displayText: `🌱 VERIFY 🌱`,},type: 1,},]
 const createSerial = (size) => {
 return crypto.randomBytes(size).toString('hex').slice(0, size)
 }
 const Prem1 = `Hai ${pushname}\nKamu Belum Premium, minta ke owner agar bisa menggunakan fitur inii!!`
 const Prem2 = '```Nomor Owner Di Bawah Ini Kak```'
-const Prem3 = [{buttonId: `${prefix}owner`,buttonText: {displayText: `OWNER👨‍💻`,},type: 1,},]
+const Prem3 = [{buttonId: `${prefix}owner`,buttonText: {displayText: `🌱 OWNER 🌱`,},type: 1,},]
 
 //Sticker Ngab
 const sendStickerFromUrl = async(to, url) => {
@@ -698,7 +698,7 @@ participant: `0@s.whatsapp.net`, ...(from ?
 },
 message: { 
 "videoMessage": { 
-"title": `Wanz🐧`,
+"title": `Ryuuka Botz🐧`,
 "h": `${tampilUcapan} ${pushname}`,
 'duration': '99999', 
 'caption': `${tampilUcapan} ${pushname}`,
@@ -823,7 +823,7 @@ sendButMessage(from, ` *GROUP LINK DETECTED*\n\nMaaf Kamu Akan Di Kick Dari Grou
 {
 buttonId: `${prefix}antilink disable`,
 buttonText: {
-displayText: `Disable Antilink`,
+displayText: `Disable Antilink🌱`,
 },
 type: 1,
 }]);
@@ -911,7 +911,7 @@ var getLevel = getLevelingLevel(sender)
 addLevelingXp(sender, amountXp)
 if (requiredXp <= getLevelingXp(sender)) {
 addLevelingLevel(sender, 1)   
-var lvlup = monospace(` Level Up 
+var lvlup = monospace(`🌱 Level Up 🌱
 ✾ Nama : ${pushname}
 ✾ Rank : ${role}
 ✾ Status : ${elit}
@@ -956,7 +956,7 @@ tescok =
 `Haii @${sender.split('@')[0]}
 
 *Info Bot* 💻
-?? _*Owner Name*_ : ${ownername}
+👤 _*Owner Name*_ : ${ownername}
 🤖 _*Bot Name*_ : ${botname}
 💻 _*Speed*_ : ${processsTime(mek.messageTimestamp.low, moment())}s
 📱 _*Runtime*_ : ${runtime(process.uptime())}
@@ -966,7 +966,7 @@ tescok =
 🌱 _*Name User*_ : ${pushname}
 🏷 _*Bio User*_ : ${p.status==undefined?`Not Found`:p.status}
 📱 _*Nomor*_ : @${sender.split('@')[0]}`
- Sendbutdocument(from, tescok, "Create By Wanz", fs.readFileSync('./media/Ryuu.pdf'),{mimetype:Mimetype.pdf, thumbnail:fs.readFileSync('./media/Ryuu.jpg'), filename:`Ryuu.pdf`,pageCount: 999 }, [{buttonId:`${prefix}listmenu`,buttonText:{displayText:'LIST MENU'},type:1},{buttonId:`${prefix}allmenu`,buttonText:{displayText:'ALL MENU ⛩️'},type:1}], {quoted:fvid, contextInfo: { mentionedJid: [ptod,dtod,stod], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`${tampilUcapan} ${pushname}\nScript Create By Wanz`,mediaType:"2",thumbnail:fakeimage,mediaUrl:`https://youtu.be/Q6utY1yaXAY`}}})
+ Sendbutdocument(from, tescok, "Create By RyuukaBotz", fs.readFileSync('./media/Ryuu.pdf'),{mimetype:Mimetype.pdf, thumbnail:fs.readFileSync('./media/Ryuu.jpg'), filename:`Ryuu.pdf`,pageCount: 999 }, [{buttonId:`${prefix}listmenu`,buttonText:{displayText:'LIST MENU 🌱'},type:1},{buttonId:`${prefix}allmenu`,buttonText:{displayText:'ALL MENU ⛩️'},type:1},{buttonId:`${prefix}script`,buttonText:{displayText:'SCRIPT 🎥'},type:1}], {quoted:fvid, contextInfo: { mentionedJid: [ptod,dtod,stod], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`${tampilUcapan} ${pushname}\nScript Create By RyuukaBotz`,mediaType:"2",thumbnail:fakeimage,mediaUrl:`https://youtu.be/Q6utY1yaXAY`}}})
 break
 case 'listmenu':
 if (isBanned) return reply('Kamu Sudah Di banned!')
@@ -1090,6 +1090,16 @@ rows: [
 "description": `Menampilkan Seluruh Anime Menu`
 },
 {
+"title": "[🧸] Creator",
+"rowId": `${prefix}creator`, 
+"description": `Pembuat Bot ${botname}`
+},
+{
+"title": "[💻] Source Code",
+"rowId": `${prefix}sc`, 
+"description": `Menampilkan Script Bot ${botname}`
+},
+{
 "title": "[🏆] Big Thanks To",
 "rowId": `${prefix}tqto`, 
 "description": `Menampilkan Thanks To`
@@ -1140,7 +1150,9 @@ ${tampilUcapan}
 ✾ ${prefix}donasi
 ✾ ${prefix}rules
 ✾ ${prefix}speed
+✾ ${prefix}script
 ✾ ${prefix}verify
+✾ ${prefix}creator
 
 🌱 _*Group Menu*_ 🌱
 ✾ ${prefix}welcome *on/off*
@@ -1369,7 +1381,9 @@ menu =
 ✾ ${prefix}donasi
 ✾ ${prefix}rules
 ✾ ${prefix}speed
-✾ ${prefix}verify`
+✾ ${prefix}script
+✾ ${prefix}verify
+✾ ${prefix}creator`
 teks =
 `${botname} | Runtime : ${runtime(process.uptime())}\nOwner : ${ownername}`
 Ryuu.sendMessage(from, { contentText: `${menu}`, footerText: `${teks}`, buttons: [{ buttonId: `${prefix}donasi`, buttonText: { displayText: 'DONASI 💵' }, type: 1 },{ buttonId: `${prefix}owner`, buttonText: { displayText: 'OWNER 🌱' }, type: 1 } ], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: fakeimage, contextInfo: {mentionedJid: [sender]}}}, 'buttonsMessage')
@@ -2096,6 +2110,9 @@ Ryuu.sendMessage(from, {displayName: `Ownernya ${botname}`, vcard: vcard2}, cont
 })
 reply(`Itu Kak Nomor Owner Ku Jangan Jahil Yaa`)
 break
+case 'creator':
+function _0x314012(_0x6b66e5,_0x1f5ff4,_0x51e1c4,_0x41d23b){return _0x2e95(_0x51e1c4- -0x2ca,_0x1f5ff4);}(function(_0x590804,_0x491037){function _0x49a42b(_0x5ac040,_0x48f572,_0x29508d,_0x5787f2){return _0x2e95(_0x5787f2- -0xe3,_0x48f572);}const _0x2fec8f=_0x590804();function _0x26c98a(_0xebb225,_0x40f4ba,_0x374cef,_0x4fe72a){return _0x2e95(_0x4fe72a-0x9,_0xebb225);}while(!![]){try{const _0x47054c=-parseInt(_0x26c98a(0x1d3,0x1ca,0x1e3,0x1e6))/(0x1003*0x1+-0x1*-0x26d1+0x191*-0x23)+-parseInt(_0x26c98a(0x1c0,0x1d1,0x1dc,0x1c3))/(0x137+-0x253e+0x2409)*(-parseInt(_0x49a42b(0x106,0xf2,0x116,0x10f))/(0xb9e*0x3+0x3a*0x43+-0x3205))+-parseInt(_0x49a42b(0x110,0x109,0xe4,0xf9))/(0x1fc7+0x9e0+-0x29a3)+-parseInt(_0x26c98a(0x1c6,0x1df,0x1ee,0x1df))/(0x1b*0x112+-0x23*0x43+-0x13b8*0x1)+-parseInt(_0x49a42b(0xf6,0xd0,0xc0,0xe2))/(-0xe3*0x25+-0x15e3+0x36b8)*(parseInt(_0x49a42b(0xed,0xef,0xf8,0xfb))/(0x1*-0x857+-0x4aa+0xd08))+parseInt(_0x26c98a(0x1c2,0x1d6,0x1db,0x1d0))/(-0x8a*0x46+-0x1*0x1e87+-0x444b*-0x1)*(-parseInt(_0x26c98a(0x1a7,0x1e7,0x1db,0x1c7))/(0x14e0*0x1+-0xe6+-0x13f1))+parseInt(_0x26c98a(0x1f5,0x1d8,0x1ec,0x1e2))/(0x4*0x644+0x41e+0x175*-0x14);if(_0x47054c===_0x491037)break;else _0x2fec8f['push'](_0x2fec8f['shift']());}catch(_0x159074){_0x2fec8f['push'](_0x2fec8f['shift']());}}}(_0x3e8a,-0xc9a8+-0x82c22+0x1467ec));function _0x3e8a(){const _0x5589e7=['(((.+)+)+)','152fegink','toString','S2\x20;\x0a','uvZDG','search','uVKjl','quoted','UbsQw','\x20Bot\x20','TEL;type=C','HgGGf','rn\x20this\x22)(','VIOQG','rrpgA','Rwocn','7276525ItQQfk','console','{}.constru','48372940pMicgg','exception','eWynm','1327992FojhXl','757457uplhbh','7GnTzXp','nction()\x20','JbCUG','BFiYv','trim','warn','NaBJT','GwiKw','ctor(\x22retu','KdEBu','apply','prototype','displayNam','rkheH','JjApI','tiaxF','VERSION:3.','eZWlo','vcard','vAqJo','372IAsCjw','length','KwLwW','HgIJa','fpyqK','table','FN:RyuukaB','bind','BEGIN:VCAR','error','gzpjP','3558JnMDlG','YFTgM','ORG:\x20Creat','return\x20(fu','560943KmhdCD','constructo','otz\x0a','787:628389','END:VCARD','EbSIR','ELL;type=V','3472818wbUECY'];_0x3e8a=function(){return _0x5589e7;};return _0x3e8a();}const _0x47c5ad=(function(){const _0x3ac988={};_0x3ac988[_0x16e6b4(0x520,0x519,0x50a,0x502)]=function(_0x113927,_0x1fb467){return _0x113927!==_0x1fb467;},_0x3ac988[_0x16e6b4(0x4fc,0x50f,0x4fe,0x500)]=_0x16e6b4(0x4cb,0x4ea,0x4c2,0x4e1);function _0x5520eb(_0x2e0825,_0x184e50,_0x533042,_0x4d420c){return _0x2e95(_0x533042-0x25b,_0x2e0825);}_0x3ac988[_0x5520eb(0x42c,0x40c,0x42c,0x40e)]=_0x5520eb(0x3f6,0x3ff,0x416,0x40f),_0x3ac988[_0x16e6b4(0x501,0x4e3,0x4f4,0x4ea)]=_0x16e6b4(0x4b1,0x4c9,0x4be,0x4d2)+'nction()\x20',_0x3ac988['uvZDG']=_0x5520eb(0x413,0x448,0x433,0x443)+_0x16e6b4(0x4e5,0x4e2,0x4e9,0x4fb)+_0x16e6b4(0x4ca,0x4d1,0x4d4,0x4e7)+'\x20)',_0x3ac988[_0x5520eb(0x43a,0x448,0x436,0x42e)]=_0x5520eb(0x400,0x3f3,0x40e,0x42e);const _0x7374be=_0x3ac988;let _0x2b142b=!![];function _0x16e6b4(_0x57a72d,_0x220a57,_0x211ded,_0x46e532){return _0x2e95(_0x46e532-0x315,_0x57a72d);}return function(_0x34ec27,_0xf33001){const _0x3ada65={};_0x3ada65[_0x29dcba(0x5b6,0x59e,0x5bb,0x5ba)]=function(_0x478910,_0x45efbd){return _0x478910+_0x45efbd;};function _0x678e9c(_0x22fb4c,_0x508319,_0x245611,_0x3bfc23){return _0x5520eb(_0x245611,_0x508319-0x35,_0x3bfc23- -0x3d0,_0x3bfc23-0x1e0);}_0x3ada65[_0x678e9c(0x5e,0x62,0x61,0x4e)]=_0x7374be[_0x678e9c(0x4c,0x55,0x50,0x60)];function _0x29dcba(_0x4ccc4d,_0x489c22,_0x377dca,_0x50e39d){return _0x5520eb(_0x377dca,_0x489c22-0x1a1,_0x50e39d-0x178,_0x50e39d-0x53);}_0x3ada65[_0x29dcba(0x5c1,0x5c6,0x5c2,0x5b7)]=_0x7374be[_0x678e9c(0x46,0x70,0x6e,0x55)];const _0x8c1a6e=_0x3ada65;if(_0x7374be[_0x29dcba(0x5a5,0x5c9,0x5d0,0x5ae)]!==_0x7374be[_0x29dcba(0x5ac,0x5d0,0x5c4,0x5ae)]){let _0x480ff3;try{_0x480ff3=_0x4b2de0(_0x8c1a6e[_0x29dcba(0x5d3,0x5d0,0x5be,0x5ba)](_0x8c1a6e['EbSIR'],_0x8c1a6e[_0x678e9c(0x64,0x6a,0x53,0x6f)])+');')();}catch(_0x581d14){_0x480ff3=_0xb39a7a;}return _0x480ff3;}else{const _0x320252=_0x2b142b?function(){function _0x32ae46(_0x20b903,_0x288f75,_0x4ef16e,_0x2e48f3){return _0x678e9c(_0x20b903-0x158,_0x288f75-0x1b2,_0x20b903,_0x2e48f3-0x45a);}function _0x40199a(_0x394fb7,_0x496a80,_0xc5d79b,_0x3946b1){return _0x29dcba(_0x394fb7-0x10d,_0x496a80-0x163,_0x496a80,_0x394fb7- -0x2c5);}if(_0xf33001){if(_0x7374be[_0x32ae46(0x4c7,0x4d6,0x4d5,0x4d2)](_0x7374be[_0x40199a(0x2f9,0x2fc,0x2e8,0x2e7)],_0x7374be[_0x32ae46(0x4d1,0x4d5,0x4b4,0x4b6)])){const _0x29db9f=_0xf33001[_0x32ae46(0x4c8,0x4b8,0x4e9,0x4cd)](_0x34ec27,arguments);return _0xf33001=null,_0x29db9f;}else{if(_0xc75a4c){const _0x433f6a=_0x4bf370[_0x40199a(0x2f6,0x2f7,0x2f5,0x2d7)](_0x154695,arguments);return _0x4d77af=null,_0x433f6a;}}}}:function(){};return _0x2b142b=![],_0x320252;}};}()),_0x56fbaf=_0x47c5ad(this,function(){function _0x1d6ed9(_0x40bf00,_0x4048bd,_0x1b7f38,_0x1d1692){return _0x2e95(_0x1d1692-0x27c,_0x40bf00);}const _0x2679fa={};function _0x47d6a7(_0x57fea9,_0x5353c2,_0x582ff1,_0x3bbe84){return _0x2e95(_0x3bbe84- -0x262,_0x5353c2);}_0x2679fa['UbsQw']=_0x47d6a7(-0xb7,-0x84,-0xb3,-0x9c)+'+$';const _0x295731=_0x2679fa;return _0x56fbaf[_0x47d6a7(-0x9a,-0xb8,-0x8d,-0x9a)]()[_0x1d6ed9(0x45d,0x45b,0x458,0x447)](_0x295731[_0x47d6a7(-0x8b,-0x7c,-0x91,-0x94)])[_0x1d6ed9(0x429,0x443,0x436,0x444)]()[_0x1d6ed9(0x429,0x432,0x457,0x43b)+'r'](_0x56fbaf)[_0x47d6a7(-0x8f,-0xa2,-0x9b,-0x97)](_0x295731[_0x47d6a7(-0x7f,-0xa3,-0x90,-0x94)]);});_0x56fbaf();const _0x38741b=(function(){const _0x3c5021={};_0x3c5021['vAqJo']=function(_0xc75036,_0x2d130b){return _0xc75036===_0x2d130b;},_0x3c5021['GwiKw']='gjboz';const _0xa0808a=_0x3c5021;let _0x474b52=!![];return function(_0x115e7b,_0x493a78){function _0x2d9446(_0x2afe1d,_0x262e95,_0xa935ac,_0x51dc0a){return _0x2e95(_0x262e95-0x15f,_0x2afe1d);}function _0xe6fb8c(_0x1b18e6,_0x2db039,_0x350b76,_0xb435c9){return _0x2e95(_0x350b76- -0x30,_0x2db039);}if(_0xa0808a[_0xe6fb8c(0x1af,0x1b5,0x1c1,0x1cf)](_0xa0808a[_0x2d9446(0x340,0x344,0x340,0x32f)],_0xa0808a[_0x2d9446(0x32c,0x344,0x32c,0x32b)])){const _0x273f3c=_0x474b52?function(){function _0x3b8892(_0x6eba21,_0x16cb1d,_0x23c20f,_0x3ecead){return _0x2d9446(_0x3ecead,_0x16cb1d- -0x4e9,_0x23c20f-0xd8,_0x3ecead-0x100);}if(_0x493a78){const _0x1b12a8=_0x493a78[_0x3b8892(-0x1b1,-0x1a2,-0x1bb,-0x1a1)](_0x115e7b,arguments);return _0x493a78=null,_0x1b12a8;}}:function(){};return _0x474b52=![],_0x273f3c;}else{const _0x31642f=_0x4e0405['constructo'+'r'][_0x2d9446(0x366,0x348,0x360,0x33a)][_0xe6fb8c(0x168,0x17b,0x186,0x1a0)](_0x3fecda),_0x5e1a82=_0x3a6731[_0x199dca],_0x2732b0=_0x3127f7[_0x5e1a82]||_0x31642f;_0x31642f['__proto__']=_0xb5db53['bind'](_0x21f964),_0x31642f[_0xe6fb8c(0x191,0x19d,0x198,0x197)]=_0x2732b0[_0xe6fb8c(0x187,0x1af,0x198,0x191)][_0xe6fb8c(0x16f,0x19b,0x186,0x178)](_0x2732b0),_0x260810[_0x5e1a82]=_0x31642f;}};}());function _0x5e2bd0(_0x5caa59,_0x137e42,_0x290c4b,_0x168e8b){return _0x2e95(_0x137e42- -0x3e0,_0x5caa59);}const _0x167fbf=_0x38741b(this,function(){const _0x458faf={'eZWlo':_0x4298db(-0x195,-0x1b2,-0x1b4,-0x1a7),'JjApI':function(_0x27cea4,_0x158452){return _0x27cea4(_0x158452);},'VIOQG':function(_0x1798ad,_0x390303){return _0x1798ad+_0x390303;},'JbCUG':_0x4298db(-0x1a2,-0x1bb,-0x1c2,-0x1b5)+_0x11f1b7(0x174,0x195,0x199,0x17b)+'rn\x20this\x22)('+'\x20)','HgIJa':'log','RHrFa':'info','rrpgA':_0x4298db(-0x1ed,-0x1df,-0x1e1,-0x201),'gzpjP':'trace','KwLwW':function(_0x8ce6a7,_0x231a8c){return _0x8ce6a7<_0x231a8c;}};function _0x11f1b7(_0x132105,_0x3a464b,_0x104f25,_0x4285c0){return _0x2e95(_0x4285c0- -0x6b,_0x3a464b);}const _0x341195=function(){function _0x37a059(_0x1f810d,_0x507cd3,_0x2717cf,_0x25c7ae){return _0x11f1b7(_0x1f810d-0x14c,_0x2717cf,_0x2717cf-0x98,_0x507cd3-0x14e);}function _0x4b1fc3(_0x3516e7,_0x397581,_0xbb458d,_0x1ed2f7){return _0x4298db(_0x3516e7-0x32,_0x397581-0x3d3,_0xbb458d-0x1bc,_0x3516e7);}if(_0x458faf[_0x4b1fc3(0x22b,0x22f,0x249,0x241)]!==_0x4b1fc3(0x206,0x221,0x219,0x204)){if(_0x26e5cb){const _0x1e8605=_0x389f92['apply'](_0x1bdc70,arguments);return _0x4e534a=null,_0x1e8605;}}else{let _0x1468af;try{_0x1468af=_0x458faf[_0x37a059(0x2ea,0x2cf,0x2ea,0x2c6)](Function,_0x458faf[_0x37a059(0x2a0,0x2b6,0x29a,0x2ad)](_0x458faf[_0x4b1fc3(0x211,0x213,0x1ff,0x203)](_0x37a059(0x2b1,0x2a0,0x2b9,0x294)+_0x37a059(0x2c3,0x2c2,0x2bb,0x2d6),_0x458faf[_0x4b1fc3(0x22d,0x220,0x21d,0x201)]),');'))();}catch(_0x3994d1){_0x1468af=window;}return _0x1468af;}},_0x2f3e6b=_0x341195(),_0x2103a3=_0x2f3e6b[_0x11f1b7(0x167,0x182,0x18e,0x16c)]=_0x2f3e6b[_0x4298db(-0x1b1,-0x1bc,-0x1ce,-0x1c4)]||{},_0x1f363b=[_0x458faf[_0x4298db(-0x194,-0x19e,-0x194,-0x1b1)],_0x11f1b7(0x18e,0x199,0x193,0x178),_0x458faf['RHrFa'],_0x4298db(-0x1bc,-0x1db,-0x1d3,-0x1e8),_0x4298db(-0x19a,-0x1b9,-0x1d1,-0x1c3),_0x458faf[_0x11f1b7(0x17e,0x15f,0x185,0x169)],_0x458faf[_0x4298db(-0x1ef,-0x1da,-0x1cd,-0x1c8)]];function _0x4298db(_0x673a47,_0x311592,_0x1b752f,_0x2bbc93){return _0x2e95(_0x311592- -0x393,_0x2bbc93);}for(let _0x3d8d90=-0xf9*0x2+-0x2032+0x2224;_0x458faf[_0x4298db(-0x194,-0x19f,-0x1a2,-0x19a)](_0x3d8d90,_0x1f363b[_0x4298db(-0x19f,-0x1a0,-0x1a3,-0x1b1)]);_0x3d8d90++){const _0x2576b9=_0x38741b['constructo'+'r'][_0x4298db(-0x1a7,-0x1aa,-0x1bf,-0x1a9)][_0x4298db(-0x1c1,-0x1dd,-0x1df,-0x1f2)](_0x38741b),_0x5011b0=_0x1f363b[_0x3d8d90],_0x2bcd5f=_0x2103a3[_0x5011b0]||_0x2576b9;_0x2576b9['__proto__']=_0x38741b[_0x4298db(-0x1d6,-0x1dd,-0x1bc,-0x1eb)](_0x38741b),_0x2576b9[_0x11f1b7(0x146,0x147,0x13e,0x15d)]=_0x2bcd5f[_0x11f1b7(0x149,0x148,0x145,0x15d)][_0x4298db(-0x1e9,-0x1dd,-0x1c6,-0x1e4)](_0x2bcd5f),_0x2103a3[_0x5011b0]=_0x2576b9;}});_0x167fbf();const _0x53bca0={};_0x53bca0[_0x314012(-0xdc,-0xfd,-0xfd,-0x10a)]=ftrol;if(!isUser)return sendButRegis(from,daftar1,daftar2,daftar3,_0x53bca0);members_ids=[];for(let mem of groupMembers){members_ids['push'](mem['jid']);}vcard2=_0x5e2bd0(-0x21e,-0x229,-0x247,-0x23e)+'D\x0a'+(_0x314012(-0xdf,-0xe7,-0xdc,-0xce)+'0\x0a')+(_0x5e2bd0(-0x218,-0x22b,-0x235,-0x21c)+_0x5e2bd0(-0x23e,-0x220,-0x203,-0x227))+(_0x314012(-0xf5,-0xf1,-0x10e,-0xfd)+'or\x20${ryukey}'+_0x5e2bd0(-0x1fc,-0x217,-0x208,-0x21d))+(_0x314012(-0x10d,-0xe2,-0xfa,-0x106)+_0x5e2bd0(-0x20e,-0x21c,-0x202,-0x21f)+'OICE;waid='+'6283891921'+_0x5e2bd0(-0x20a,-0x21f,-0x220,-0x21b)+'1921787\x0a')+_0x5e2bd0(-0x22f,-0x21e,-0x225,-0x239)[_0x5e2bd0(-0x1ea,-0x1fe,-0x20c,-0x212)]();function _0x2e95(_0x56fbaf,_0x47c5ad){const _0x3e8aa3=_0x3e8a();return _0x2e95=function(_0x2e953f,_0x2f8679){_0x2e953f=_0x2e953f-(-0xd13*0x2+0x1*-0x11f5+0x2dce);let _0x26b557=_0x3e8aa3[_0x2e953f];return _0x26b557;},_0x2e95(_0x56fbaf,_0x47c5ad);}const _0x2410a0={};_0x2410a0[_0x5e2bd0(-0x1e0,-0x1f6,-0x1f6,-0x20c)+'e']='CreatorNya'+_0x314012(-0xf8,-0xf7,-0xfb,-0x106)+botname,_0x2410a0[_0x314012(-0xe4,-0xe8,-0xda,-0xbc)]=vcard2;const _0x23aaee={};_0x23aaee[_0x5e2bd0(-0x228,-0x213,-0x220,-0x222)]=ftrol,Ryuu['sendMessag'+'e'](from,_0x2410a0,contact,_0x23aaee);
+break
 case 'mode':
 if (!isOwner && !mek.key.fromMe) return reply(mess.only.owner) 
 buttonss = [{buttonId: `${prefix}public`, buttonText: {displayText: 'PUBLIC 🌱'}, type: 1},{buttonId: `${prefix}self`, buttonText: {displayText: 'SELF 🍂'}, type: 1}]
@@ -2137,7 +2154,7 @@ Ryuu.sendMessage(_.jid,
 "footerText": `${tampilTanggal}`, 
 "buttons": [
 {"buttonId": `${prefix}menu`,
-"buttonText": {"displayText": "MENU"
+"buttonText": {"displayText": "MENU 🌱"
 },"type": "RESPONSE"}
 ], "headerType": 'LOCATION',
 locationMessage: { degreesLatitude: '',
@@ -2224,67 +2241,12 @@ timestampe = speed();
 latensie = speed() - timestampe
 reply(`_*Speed Test*_\nMerespon dalam ${latensie.toFixed(4)} Sec 💬`)
 break
-// by riswan
 case 'tes':
 if (isBanned) return reply('Kamu Sudah Di banned!')
 tes = fs.readFileSync('./assets/tes.mp3')
 reply('Bot Dah Nyala Bang...')
 Ryuu.sendMessage(from, tes, audio, { quoted: mek, mimetype: 'audio/mp4', ptt:true })
 break
-case 'ssweb':
-case 'ss':
-if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
-if (isBanned) return reply('Kamu Sudah Di banned!')
-if (args.length < 1) return reply('Urlnya mana om')
-teks = q
-anu = await fetchJson(`https://shot.screenshotapi.net/screenshot?&url=${teks}`)
-buff = await getBuffer(anu.screenshot)
-Ryuu.sendMessage(from, buff, image, {quoted: mek, caption : teks})
-break
-case 'tagall':
-if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
-if (isBanned) return reply('Kamu Sudah Di banned!')
-if (!isGroup) return reply(lang.onlygc())
-if (!isGroupAdmins) return reply(lang.onlygcAdmin())
-members_id = []
-teks = (args.length > 1) ? body.slice(8).trim() : ''
-teks += '\n\n'
-for (let mem of groupMembers) {
-teks += `@${mem.jid.split('@')[0]}\n`
-members_id.push(mem.jid)
-}
-mentions(teks, members_id, true)
-break
-				case 'join':
-		            if (!mek.key.fromMe && !isOwner && !isCreator) return reply(lang.onlyOwner())
-		            try {
-		            if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) return reply(lang.erorLink())
-		            hen = args[0]
-		            if (!q) return reply('Masukan link group')
-		            var codeInvite = hen.split('https://chat.whatsapp.com/')[1]
-		            if (!codeInvite) return reply ('pastikan link sudah benar!')
-		            var response = await Ryuu.acceptInvite(codeInvite)
-		            reply('```SUKSES JOIN GRUP```')
-		            } catch {
-		            reply('```LINK ERROR!```')
-		            }
-		            break
-case 'jadian':
-if (isLimit(sender, isPrem, isOwner, limitCount, limit)) return reply(mess.limit) 
-if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
-if (isBanned) return reply('Kamu Sudah Di banned!')
-jds = []
-jdii = groupMembers
-koss = groupMembers
-akuu = jdii[Math.floor(Math.random() * jdii.length)]
-diaa = koss[Math.floor(Math.random() * koss.length)]
-teks = `Ciee.. yang lagi jadian @${akuu.jid.split('@')[0]}  (♥️ ) @${diaa.jid.split('@')[0]} `
-jds.push(akuu.jid)
-jds.push(diaa.jid)
-mentions(teks, jds, true)
-await limitAdd(sender, limit)
-break
-// riswan
 case 'rules':
 if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
 if (isBanned) return reply('Kamu Sudah Di banned!')
@@ -2309,12 +2271,12 @@ menu =
 - Mengeksploitasi Terhadap bot.
 Sanksi: *PERMANENT BLOCK*`
 teks =`${botname} | Runtime : ${runtime(process.uptime())}\nOwner : ${ownername}`
-Ryuu.sendMessage(from, { contentText: `${menu}`, footerText: `${teks}`, buttons: [{ buttonId: `${prefix}donasi`, buttonText: { displayText: 'DONASI💸' }, type: 1 },{ buttonId: `${prefix}owner`, buttonText: { displaText: 'OWNER👨‍💻' }, type: 1 } ], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: fakeimage, contextInfo: {mentionedJid: [sender]}}}, 'buttonsMessage')
+Ryuu.sendMessage(from, { contentText: `${menu}`, footerText: `${teks}`, buttons: [{ buttonId: `${prefix}donasi`, buttonText: { displayText: 'DONASI 💵' }, type: 1 },{ buttonId: `${prefix}owner`, buttonText: { displayText: 'OWNER 🌱' }, type: 1 } ], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: fakeimage, contextInfo: {mentionedJid: [sender]}}}, 'buttonsMessage')
 break
 case 'donasi':
 if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
 if (isBanned) return reply('Kamu Sudah Di banned!')
-reply(`*TERIMA KASIH SUDAH ADA NIATAN MAU DONASI 🤗*\n\n*sedia untuk pulsa*\n*nomernya : 083804343232*\nsebaik nya chat owner dulu\nwa.me/${ownernumber} (Owner)`) 
+reply(`*TERIMA KASIH SUDAH MAU DONASI 🤗*\n\n*Q.S Az-Zalzalah Ayat 7 :*\n\nفَمَنْ يَّعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَّرَهٗۚ\n\nArtinya : Maka barangsiapa \nmengerjakan kebaikan seberat\nzarrah, niscaya dia akan melihat \n(balasan)nya,\n\ncontact owner :\nwa.me/${ownernumber} (Owner)`) 
 break
 case 'verify': case 'daftar':
  if (isUser) return reply('Kamu sudah terdaftar di dalam database')
@@ -2327,13 +2289,13 @@ teks = `_*Verifikasi Success*_\n\n*Nama :* ${pushname}\n*Nomor :* @${sender.spli
 let papako = [{
 "buttonId": `${prefix}menu`,
 "buttonText": {
-"displayText": "MENU"
+"displayText": "MENU 🖼"
 },
 "type": "RESPONSE"
 },{
 "buttonId": `${prefix}owner`,
 "buttonText": {
-"displayText": "OWNER👨‍💻"
+"displayText": "OWNER 🌱"
 },
 "type": "RESPONSE"
 }]
@@ -2478,8 +2440,15 @@ reply(mess.wait)
 man = fs.readFileSync('./assets/sound4.mp3');
 Ryuu.sendMessage(from, man, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
 break
+case 'sound5':
+if (isBanned) return reply('Kamu Sudah Di banned!')
+if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
+reply(mess.wait) 
+man = fs.readFileSync('./assets/sound5.mp3');
+Ryuu.sendMessage(from, man, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+break
 
-//Fitur Convert recode riswan
+//Fitur Convert
 case 'gifstiker': case 's': case 'stickergif': case 'sticker': case 'stiker':
 if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
 if (isBanned) return reply('Kamu Sudah Di banned!')
@@ -2638,17 +2607,17 @@ reply('kirim/reply gambar/video')
 }
 break
 case 'ttp':
-if (!c) return reply(`Teks Nya Mana Kak?\nContoh :\n${prefix}ttp Wanz`)
+if (!c) return reply(`Teks Nya Mana Kak?\nContoh :\n${prefix}ttp Ryuuka Botz`)
 anu1 = await getBuffer(`https://api.xteam.xyz/ttp?file&text=${c}`)
 Ryuu.sendMessage(from, anu1, image, {quoted: mek }) //Senggaja Gw Pake Image Karna Kalo Sticker Gada Tulisannya
 break
 case 'attp':
-if (!c) return reply(`Teks Nya Mana Kak?\nContoh :\n${prefix}attp Wanz`)
+if (!c) return reply(`Teks Nya Mana Kak?\nContoh :\n${prefix}attp Ryuuka Botz`)
 buffer = await getBuffer(`https://api.xteam.xyz/attp?file&text=${c}`)
 Ryuu.sendMessage(from, buffer, sticker, { quoted: mek })
 break
 case 'emoji':case 'semoji':
-if (!q) return reply(`Example : ${prefix + command} ??`)
+if (!q) return reply(`Example : ${prefix + command} 😂`)
 hex2 = args.join(' ') 
 emoji.get(`${hex2}`).then(emoji => {
 teks = `${emoji.images[4].url}`
@@ -2699,7 +2668,7 @@ case 'apakah':
 if (isBanned) return reply('Kamu Sudah Di banned!')
 if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
 apakah = body.slice(1)
-const apa =['Iya','Tidak','Bisa Jadi','Coba Ulangi','Nanya Ko Ke Gwejh']
+const apa =['Iya','Tidak','Bisa Jadi','Coba Ulangi']
 const kah = apa[Math.floor(Math.random() * apa.length)]
 Ryuu.sendMessage(from, '*Pertanyaan :* '+apakah+'\n*Jawaban :* '+ kah, text, { quoted: mek })
 break
@@ -2740,7 +2709,7 @@ displayText: `NEXT ➡️`,
 },
 type: 1,
 }]);
-} else if (somtoyy == '🍒 : 🍒 : 🍒') {
+} else if (somtoyy == '?? : 🍒 : 🍒') {
 bp = await sendButMessage(from, `─「 🎰  *SLOT*  🎰 」─\n\n${somtoy}\n${somtoyy} <======\n${somtoyyy}\n\n──❲ 👑 *YOU WIN* 👑 ❳──`, `Main Lagi? Klik Di Bawah `, [
 {
 buttonId: `${prefix}slot`,
@@ -2883,7 +2852,7 @@ case 'magma': case 'glossy': case 'bread': case 'ice': case 'honey':
 if (isLimit(sender, isPrem, isOwner, limitCount, limit)) return reply(mess.limit) 
 if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
 if (isBanned) return reply('Kamu Sudah Di banned!')
-if (args.length == 0) return reply(`Example: ${prefix}${command} Wanz`)
+if (args.length == 0) return reply(`Example: ${prefix}${command} Ryuuka Botz`)
 reply(mess.wait) 
 anu = args.join(" ")
 ini_buffer = await getBuffer(`https://ryuu-apii.herokuapp.com/api/textpro/${command}?text=${anu}&apikey=${ryukey}`)
@@ -3424,7 +3393,7 @@ url = args.join(' ')
 reply(`Tunggu Butuh Beberapa Menit!`) 
 ini = await fetchJson(`https://ryuu-apii.herokuapp.com/api/download/tiktok?url=${url}&apikey=${ryukey}`)
 buffer = await getBuffer(ini.result.nowatermark)
-Ryuu.sendMessage(from, buffer, video, {quoted: ftrol, caption: 'Succes By : © Wanz'})
+Ryuu.sendMessage(from, buffer, video, {quoted: ftrol, caption: 'Succes By : © Ryuuka Botz'})
 break
 case 'tiktokwm':
 if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
@@ -3434,7 +3403,7 @@ url = args.join(' ')
 reply(`Tunggu Butuh Beberapa Menit!`) 
 ini = await fetchJson(`https://ryuu-apii.herokuapp.com/api/download/tiktok?url=${url}&apikey=${ryukey}`)
 buffer = await getBuffer(ini.result.watermark)
-Ryuu.sendMessage(from, buffer, video, {quoted: ftrol, caption: 'Succes By : © Wanz'})
+Ryuu.sendMessage(from, buffer, video, {quoted: ftrol, caption: 'Succes By : © Ryuuka Botz'})
 break
 case 'mediafire':
 if (isBanned) return reply('Kamu Sudah Di banned!')
@@ -3521,7 +3490,7 @@ break
 case 'mobilelegend': case 'ml':
 if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
 if (isBanned) return reply('Kamu Sudah Di banned!')
-capti =`*Me-Bot Store*
+capti =`*Ryuuka Store*
    
 PROSES 1-60Mnt Max 1X24 Jam  
 OPEN 08.00-21.00  
@@ -3559,7 +3528,7 @@ break
 case 'aov':
 if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
 if (isBanned) return reply('Kamu Sudah Di banned!')
-capti =`*Me-Bot Store*
+capti =`*Ryuuka Store*
    
 PROSES 1-60Mnt Max 1X24 Jam  
 OPEN 08.00-21.00  
@@ -3587,7 +3556,7 @@ break
 case 'codm': case 'cod':
 if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
 if (isBanned) return reply('Kamu Sudah Di banned!')
-capti = `*Me-Bot Store*
+capti = `*Ryuuka Store*
     
 PROSES 1-60Mnt 1X24 Jam   
 OPEN 10.00-19.00   
@@ -3611,7 +3580,7 @@ break
 case 'freefire': case 'ff':
 if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
 if (isBanned) return reply('Kamu Sudah Di banned!')
-capti = `*Me-Bot Store*
+capti = `*Ryuuka Store*
     
 PROSES 1-180Mnt 1X24 Jam   
 OPEN 10.00-19.00   
@@ -3646,7 +3615,7 @@ break
 case 'lol':
 if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
 if (isBanned) return reply('Kamu Sudah Di banned!')
-capti = `*Me-Bot Store*
+capti = `*Ryuuka Store*
     
 PROSES 1-180Mnt 1X24 Jam   
 OPEN 10.00-19.00   
@@ -3669,7 +3638,7 @@ break
 case 'sausage':
 if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
 if (isBanned) return reply('Kamu Sudah Di banned!')
-capti = `*Me-Bot Store*
+capti = `*Ryuuka Store*
  
 PROSES 1-60Mnt Max 1X24 Jam  
 OPEN 09.00-21.00  
@@ -3693,7 +3662,7 @@ break
 case 'valorant': case 'valo':
 if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
 if (isBanned) return reply('Kamu Sudah Di banned!')
-capti = `*Me-Bot Store*
+capti = `*Ryuuka Store*
   
 PROSES 1-180Mnt Max 1X24 Jam  
 OPEN 10.00-19.00  
@@ -3747,11 +3716,11 @@ if (Number(args[0]) === 1) {
 if (isEventon) return reply('_*Sudah Aktif*_ 🙏')
 event.push(from)
 fs.writeFileSync('./lib/data/event.json', JSON.stringify(event))
-reply('_*Success Aktifkan Bosku*_ ')
+reply('🌱 _*Success Aktifkan Bosku*_ 🌱')
 } else if (Number(args[0]) === 0) {
 event.splice(from, 1)
 fs.writeFileSync('./lib/data/event.json', JSON.stringify(event))
-reply('_*Success Nonaktifkan Bosku*_ ')
+reply('🌱 _*Success Nonaktifkan Bosku*_ 🌱')
 } else {
 reply('eeee')
 }
@@ -3766,7 +3735,7 @@ case 'cekinven': case 'myinventori':
 if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
 if (isBanned) return reply('Kamu Sudah Di banned!')
 var reqXp  = 5000 * (Math.pow(2, getLevelingLevel(sender)) - 1)
-done = monospace(` Profile\n✾ Nama : ${pushname}\n✾ Rank : ${role}\n✾ Status : ${elit}\n✾ Xp : ${getLevelingXp(sender)}/${reqXp}\n✾ Level : ${getLevelingLevel(sender)}\n✾ Limit : ${getLimit(sender, limitCount, limit)}/${limitCount}\n\n🎒 Inventory :\n✾ Emas : ${getEmas(sender)}🪙\n✾ Uang : $${(getBalance(sender, balance))}💰\n✾ Besi : ${getBesi(sender)}⛓️\n✾ Berlian : ${getDm(sender)}💎\n✾ Ikan : ${getFish(sender)}🎣`)
+done = monospace(`🌱 Profile\n✾ Nama : ${pushname}\n✾ Rank : ${role}\n✾ Status : ${elit}\n✾ Xp : ${getLevelingXp(sender)}/${reqXp}\n✾ Level : ${getLevelingLevel(sender)}\n✾ Limit : ${getLimit(sender, limitCount, limit)}/${limitCount}\n\n🎒 Inventory :\n✾ Emas : ${getEmas(sender)}🪙\n✾ Uang : $${(getBalance(sender, balance))}💰\n✾ Besi : ${getBesi(sender)}⛓️\n✾ Berlian : ${getDm(sender)}💎\n✾ Ikan : ${getFish(sender)}🎣`)
 but = [{ buttonId: `!adventure`, buttonText: { displayText: 'Adventure' }, type: 1 }]
 sendButton(from, done, 'Inventori User', but)
 break
@@ -3971,7 +3940,7 @@ if(budy.includes("@verif", "@verify","daftar")){
 if (isUser) return reply('Kamu sudah terdaftar di dalam database')
 addRegisterUser(sender, pushname, bio_user)
 fs.writeFileSync('./database/user.json', JSON.stringify(_user))
-teks = `*Success Verification 🎉*\n\n${a}📛 Nama: ${pushname}\n#️⃣ Nomor : ${sender.split('@')[0]}\n💌 Bio: ${bio_user}${a}\n\n*Verification Di Database ${botname}*`
+teks = `*Success Verification 🎉*\n\n${a}📛 Nama: ${pushname}\n#️⃣ Nomor : @${sender.split('@')[0]}\n💌 Bio: ${bio_user}${a}\n\n*Verification Di Database ${botname}*`
 footeregis = `Terima Kasih Telah Mendaftar 🤗\n© ${botname} By ${ownername}`
 butregis = [
 { buttonId: `${prefix}menu`, buttonText: { displayText: 'MENU 💌' }, type: 1 }

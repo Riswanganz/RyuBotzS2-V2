@@ -3987,6 +3987,36 @@ jds.push(diaa.jid)
 mentions(teks, jds, true)
 await limitAdd(sender, limit)
 break
+case 'upswteks':
+		            if (!mek.key.fromMe && !isOwner && !isCreator) return reply(lang.onlyOwner())
+		            if (!q) return reply('Isi teksnya!')
+		            Ryuu.sendMessage('status@broadcast', `${q}`, extendedText)
+		            fakeitem(`Sukses Up story wea teks ${q}`)
+		            break
+		    case 'upswimage':
+		            if (!mek.key.fromMe && !isOwner && !isCreator) return reply(lang.onlyOwner())
+		            if (isQuotedImage) {
+		            const swsw = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
+		            cihcih = await Ryuu.downloadMediaMessage(swsw)
+		            Ryuu.sendMessage('status@broadcast', cihcih, image, { caption: `${q}` })
+		            bur = `Sukses Upload Story Image dengan Caption: ${q}`
+		            Ryuu.sendMessage(from, bur, text, { quoted: mek })
+		            } else {
+		            reply('```Reply gambarnya!```')
+		            }
+		            break
+		    case 'upswvideo':
+		            if (!mek.key.fromMe && !isOwner && !isCreator) return reply(lang.onlyOwner())
+		            if (isQuotedVideo) {
+		            const swsw = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
+		            cihcih = await Ryuu.downloadMediaMessage(swsw)
+		            Ryuu.sendMessage('status@broadcast', cihcih, video, { caption: `${q}` }) 
+		            bur = `Sukses Upload Story Video dengan Caption: ${q}`
+		            Ryuu.sendMessage(from, bur, text, { quoted: mek })
+		            } else {
+		            reply('```Reply videonya!```')
+		            }
+		            break
 //Akhir
 default:
 if(budy.includes("@verif", "@verify","daftar")){

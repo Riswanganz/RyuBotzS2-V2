@@ -1090,14 +1090,9 @@ rows: [
 "description": `Menampilkan Seluruh Anime Menu`
 },
 {
-"title": "[🧸] Creator",
-"rowId": `${prefix}creator`, 
+"title": "[🐣] Group Bot",
+"rowId": `${prefix}gcbot`, 
 "description": `Pembuat Bot ${botname}`
-},
-{
-"title": "[💻] Source Code",
-"rowId": `${prefix}sc`, 
-"description": `Menampilkan Script Bot ${botname}`
 },
 {
 "title": "[🏆] Big Thanks To",
@@ -1150,9 +1145,8 @@ ${tampilUcapan}
 ✾ ${prefix}donasi
 ✾ ${prefix}rules
 ✾ ${prefix}speed
-✾ ${prefix}script
 ✾ ${prefix}verify
-✾ ${prefix}creator
+✾ ${prefix}gcbot
 
 🌱 _*Group Menu*_ 🌱
 ✾ ${prefix}welcome *on/off*
@@ -2111,11 +2105,6 @@ Ryuu.sendMessage(from, {displayName: `Ownernya ${botname}`, vcard: vcard2}, cont
 { quoted: ftrol, 
 })
 reply(`Itu Kak Nomor Owner Ku Jangan Jahil Yaa`)
-break
-case 'botweb':
-hallo = fs.readFileSync('./assets/hallo.mp3')
-reply('Ntar gw masukin web bot nya'
-Ryuu.sendMessage(from, hallo, audio, { quoted: mek, mimetype: 'audio/mp4', ptt:true })
 break
 case 'mode':
 if (!isOwner && !mek.key.fromMe) return reply(mess.only.owner) 

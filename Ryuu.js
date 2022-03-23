@@ -1092,7 +1092,7 @@ rows: [
 {
 "title": "[🐣] Group Bot",
 "rowId": `${prefix}gcbot`, 
-"description": `Pembuat Bot ${botname}`
+"description": `Group Bot ${botname}`
 },
 {
 "title": "[🏆] Big Thanks To",
@@ -2235,6 +2235,7 @@ latensie = speed() - timestampe
 reply(`_*Speed Test*_\nMerespon dalam ${latensie.toFixed(4)} Sec 💬`)
 break
 case 'gcbot':
+if (!isUser) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol}) 
 if (isBanned) return reply('Kamu Sudah Di banned!')
 tes = fs.readFileSync('./assets/hallo.mp3')
 reply('*GROUP BOT* : \nhttps://chat.whatsapp.com/G7feMT0blJi6j3UvjHOyjK\n\nNote:\nGRUP BEBAS, TAPI JANGAN KIRIM PORN.')
@@ -3993,26 +3994,6 @@ tagg.push(i.jid)
 mentions(teks, tagg, true)
 await limitAdd(sender, limit)
 break   
-case 'ganteng': case 'cantik': case 'jelek': case 'goblok':  case 'bego': case 'pinter': case 'jago': case 'nolep': case 'monyet':  case 'babi': case 'beban': case 'baik': case 'jahat': case 'anjing': case 'haram': case 'kontol': case 'pakboy': case 'pakgirl': case 'wibu': case 'hebat': case 'sadboy': case 'sadgirl':  
-               	await gameAdd(sender, glimit)
-				   if (!isGroup) return reply(lang.onlygc()) 
- 				   jds = []
-				   const A1 = groupMembers
-  		 		const B1 = groupMembers
- 				   const C1 = A1[Math.floor(Math.random() * A1.length)]
-				   D1 = `Yang *ter${command}* disini adalah @${C1.jid.split('@')[0]}`                  
-				   jds.push(C1.jid)
-				   mentions(D1, jds, true)
-				   break
-case 'rkick': case 'kickreply':
-if (!isGroup) return reply(lang.onlygc())
-if (!isGroupAdmins) return reply(lang.onlygcAdmin())
-if (!isBotGroupAdmins) return reply(lang.botNotAdm())
-if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Reply pesan yg ingin di Kick!')
-mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
-mentions(`Perintah di terima, mengeluarkan : @${mentioned[0].split('@')[0]}`, mentioned, true)
-Ryuu.groupRemove(from, mentioned)
-break
 //Akhir
 default:
 if(budy.includes("@verif", "@verify","daftar")){
